@@ -1,28 +1,27 @@
 <template>
+
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Swagger 
+      url="https://petstore.swagger.io/v2/swagger.json"
+      urlBase="https://petstore.swagger.io/"
+      noModel
+      noTitle
+      >
+        <Api tag="pet"/>
+        <Api operationId="loginUser"/>
+    </Swagger>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Swagger from './components/Swagger.vue'
+import Api from './components/Api.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Swagger,
+    Api
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
